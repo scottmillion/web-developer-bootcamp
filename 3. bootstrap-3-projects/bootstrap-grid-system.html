@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bootstrap-3.3.5/dist/css/bootstrap.min.css" />
+
+    <title>Document</title>
+
+    <style>
+      #left-one {
+        background: pink;
+      }
+      #middle-one {
+        background: yellow;
+      }
+      #right-one {
+        background: orange;
+      }
+      .blue {
+        background: lightblue;
+      }
+      .container {
+        width: 90%;
+      }
+    </style>
+  </head>
+
+  <!-- Our Nav -->
+
+  <body>
+    <h1>Bootstrap Basics</h1>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2" id="left-one">Column large 2</div>
+        <div class="col-lg-8" id="middle-one">Column large 6</div>
+        <div class="col-lg-2" id="right-one">Column large 2</div>
+      </div>
+      <div class="row">
+        <div class="col-md-4" id="left-one">Column medium 4</div>
+        <div class="col-md-4" id="middle-one">Column medium 4</div>
+        <div class="col-md-4" id="right-one">Column medium 4</div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3" id="left-one">Column small 3</div>
+        <div class="col-sm-6" id="middle-one">Column small 6</div>
+        <div class="col-sm-3" id="right-one">Column small 3</div>
+      </div>
+      <div class="row">
+        <div class="col-xs-2" id="left-one">Column xsmall 2</div>
+        <div class="col-xs-8" id="middle-one">Column xsmall 8</div>
+        <div class="col-xs-2" id="right-one">Column xsmall 2</div>
+      </div>
+      <h2>Break</h2>
+      <div class="row">
+        <div class="col-lg-2 col-md-4 col-sm-6" id="left-one">
+          <div class="row">
+            <div class="col-sm-6 blue">Half</div>
+            <div class="col-sm-6 blue">Half</div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 col-sm-6" id="middle-one">hi</div>
+        <div class="col-lg-2 col-md-4 col-sm-6" id="right-one">hi</div>
+        <div class="col-lg-2 col-md-4 col-sm-6" id="left-one">hi</div>
+        <div class="col-lg-2 col-md-4 col-sm-6" id="middle-one">hi</div>
+        <div class="col-lg-2 col-md-4 col-sm-6" id="right-one">hi</div>
+      </div>
+    </div>
+  </body>
+</html>

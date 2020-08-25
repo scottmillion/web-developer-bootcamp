@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Keep Score</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Keep Score</h1>
+      <div class="row">
+        <div class="col">
+          <h2>Player 1</h2>
+          <div class="score-box" id="score-box-player-one">0</div>
+          <div class="image-container">
+            <img src="player.jpg" id="image1" />
+          </div>
+          <button class="btn" id="add-point-p1">+1 Point</button>
+        </div>
+        <div class="col">
+          <h2>Player 2</h2>
+          <div class="score-box" id="score-box-player-two">0</div>
+          <div class="image-container">
+            <img src="player.jpg" id="image2" />
+          </div>
+          <button class="btn" id="add-point-p2">+1 Point</button>
+        </div>
+        <div id="rounds">
+          <p id="play-to-num">
+            Playing to 5
+          </p>
+          <p>
+            <button class="playing" id="play-to-minus">-</button>
+            <button class="playing" id="play-to-plus">+</button><br />
+            <button class="btn" id="reset">Reset</button>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="javaScript.js"></script>
+  </body>
+</html>

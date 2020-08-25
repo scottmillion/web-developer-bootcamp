@@ -1,0 +1,97 @@
+:root {
+  --border-properties: 2px solid red;
+}
+
+body {
+  font-size: 24px;
+}
+
+p {
+  font-family: "Raleway", sans-serif;
+
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+p span {
+  font-size: 2em;
+}
+
+h1,
+h2 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Do Hyeon", sans-serif;
+  font-size: 60px;
+  text-align: center;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background: blue;
+}
+
+#top-row {
+  display: flex;
+  justify-content: center;
+}
+
+#middle-row {
+  display: flex;
+  justify-content: center;
+}
+
+#bottom-row {
+  display: flex;
+  justify-content: center;
+}
+
+#box-container {
+  width: 100%;
+}
+
+#top-left,
+#middle-left,
+#bottom-left {
+  border-right: var(--border-properties);
+  border-bottom: var(--border-properties);
+}
+
+#top-center,
+#middle-center,
+#bottom-center {
+  border-bottom: var(--border-properties);
+  border-right: var(--border-properties);
+}
+
+#top-right,
+#middle-right,
+#bottom-right {
+  border-bottom: var(--border-properties);
+}
+
+#bottom-left,
+#bottom-right,
+#bottom-center {
+  border-bottom: none;
+}
+
+table {
+  background: lightgray;
+  margin: 20px auto;
+}
+
+td {
+  width: 200px;
+  height: 200px;
+}
+
+.vertical {
+  border-right: var(--border-properties);
+  border-left: var(--border-properties);
+}
+
+.horizontal {
+  border-top: var(--border-properties);
+  border-bottom: var(--border-properties);
+}

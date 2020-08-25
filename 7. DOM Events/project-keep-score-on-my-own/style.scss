@@ -1,0 +1,143 @@
+@import "./variables";
+@import "./mixins";
+
+body {
+  @include backgroundColor(orange);
+  font-size: 20px;
+  font-family: "Alata", sans-serif;
+}
+
+.container {
+  width: 100% - 50%; // 50% works fine, just testing - + * / feature.
+  min-width: 500px;
+  margin: 20px auto;
+  background: $whiteBg;
+  border-radius: 40px;
+  box-shadow: 6px 6px rgba(0, 0, 0, 0.2);
+
+  h1 {
+    text-align: center;
+    line-height: 3.5rem;
+    margin: 0px auto;
+    padding-top: 10px;
+    color: rgb(25, 150, 233);
+  }
+
+  h2 {
+    margin: 10px auto;
+  }
+
+  .row {
+    width: 90%;
+
+    margin: auto;
+    @include flexCenterFlexWrap();
+
+    .col {
+      width: 40%;
+      text-align: center;
+      padding: 5px;
+
+      .score-box {
+        border: 2px solid rgb(252, 176, 252);
+        border-radius: 10%;
+        color: rgb(25, 150, 233);
+        margin: auto;
+        padding: 3px;
+        width: 4rem;
+        font-size: 3rem;
+      }
+
+      .image-container {
+        width: 100%;
+
+        img {
+          width: 150px;
+          height: auto;
+          transition: ease-out 100ms;
+          &:hover {
+            transition: ease-out 200ms;
+          }
+        }
+
+        #image1:hover {
+          transform: $transformImgNeg;
+        }
+
+        #image2:hover {
+          transform: $transformImgPos;
+        }
+      }
+    }
+
+    .btn {
+      margin: 15px auto;
+      padding: 8px 25px;
+      font-family: inherit;
+      letter-spacing: 2px;
+    }
+
+    #rounds {
+      width: 91.2%;
+
+      p {
+        text-align: center;
+        font-size: 2rem;
+      }
+
+      .playing {
+        font-size: 30px;
+        width: 50px;
+        font-family: inherit;
+      }
+
+      #reset {
+        @extend .btn;
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  body {
+    background: rgb(25, 150, 233);
+    font-size: 16px;
+  }
+  .container h1 {
+    color: orange;
+  }
+
+  .container {
+    width: 80%;
+    min-width: 320px;
+  }
+  .container .row .col {
+    width: 100%;
+  }
+
+  .container .row .col .image-container {
+    display: none;
+  }
+
+  .container .row .col .score-box {
+    width: 50px;
+    font-size: 44px;
+  }
+
+  .container .row #rounds p {
+    text-align: center;
+    font-size: 24px;
+  }
+
+  .container .row #rounds .playing {
+    font-size: 24px;
+    width: 40px;
+  }
+
+  .container .row #rounds #reset {
+    font-size: 15px;
+  }
+}
+
+@import "./animation";

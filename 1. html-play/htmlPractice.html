@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- thead and tbody do nothing except when read out to those who cant see -->
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Red</td>
+          <td>Orange</td>
+        </tr>
+        <tr>
+          <td>Green</td>
+          <td>Yellow</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- HTML FORMS -->
+    <!-- Method - what http method? GET Requests are when we want to retrieve information. POST requests are when we are adding something to a database. Submit email address is post request. Searching in Google is get request. -->
+
+    <form action="URL-to-send-data-do" method="GET-or-POST">
+      <input type="text" />
+      <input type="date" />
+      <input type="color" />
+      <input type="file" />
+      <input type="checkbox" />
+      <input type="radio" />
+    </form>
+    <h2>Sign In</h2>
+    <form>
+      <!-- Two ways to add labels. Way 1 is to nest your input inside the label. Way 2 is to give a 'for' attribute to label and an 'id' attribute to the input. -->
+      <label>
+        Email:
+        <input name="email" type="email" placeholder="email" required />
+      </label>
+      <label for="password-id">Password: </label>
+      <input
+        id="password-id"
+        name="password"
+        type="password"
+        placeholder="password"
+      />
+      <button>Login</button>
+      <input type="submit" />
+    </form>
+
+    <!-- The "name" attribute will append the ?username=Whateveryoutyped&password=whateveryoutyped to your url -->
+
+    <!-- "Name" is for appending to url when data sent & it also groups radio buttons so only one selection can be made (both radio buttons have same name). "Type" is for input type. "Placeholder" is to show what should go in "Value" will prefill text input fields and for radio buttons it will tell us what the value of the button is (what data has been selected "dogs") "id" connects to label tag's "for" if we don't choose to nest. "required" makes it so you must fill in that input-->
+
+    <h2>Radio, Checkbox, Dropdown</h2>
+
+    <form>
+      <label for="dogs">Dogs: </label>
+      <input name="pet-choice" type="radio" id="dogs" value="dogs" />
+      <label
+        >Cats:
+        <input type="radio" name="pet-choice" value="cats" />
+      </label>
+      <label
+        >Happy
+        <input name="test" type="checkbox" value="happy" />
+      </label>
+      <label
+        >Sad
+        <input type="checkbox" name="test" value="sad" />
+      </label>
+
+      <!-- Whatever is in option will be sent as the value unless we overwrite with a value attribute -->
+      <p>What's your favorite color?</p>
+      <select name="Favorite-Color">
+        <option>Eat</option>
+        <option>Run</option>
+        <option value="sleep">Sleep</option>
+      </select>
+
+      <textarea name="paragraph" rows="10" cols="50"></textarea>
+
+      <button>Go!</button>
+      <!-- If button is the last item in the form it will submit data -->
+    </form>
+
+    <h3>Register</h3>
+    <form>
+      <label
+        >First Name:
+        <input type="text" name="fname" required />
+      </label>
+      <label>
+        Last Name:
+        <input type="text" name="lname" required />
+      </label>
+      <br />
+
+      <label
+        >Male: <input type="radio" name="gender" value="male" required
+      /></label>
+      <label>Female: <input type="radio" name="gender" value="female" /></label>
+      <label>Other: <input type="radio" name="gender" value="other" /></label>
+      <br />
+      <label
+        >Email: <input type="email" name="email-address"
+        placeholder="you@example.com" / required></label
+      >
+      <label
+        >Password:
+        <input
+          type="password"
+          name="password"
+          placeholder="password"
+          required
+          pattern=".{5,}"
+          title="Min 5 character password."
+        />
+      </label>
+      <!-- title shows error when our pattern condition is not met -->
+
+      <br />
+      <span>Birthday: </span>
+      <select name="Month" required>
+        <option disabled selected value="">Month</option>
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+        <option>April</option>
+        <option>May</option>
+        <option>June</option>
+        <option>July</option>
+        <option>August</option>
+        <option>September</option>
+        <option>October</option>
+        <option>November</option>
+        <option>December</option>
+      </select>
+      <select name="Day" required>
+        <option value="" disabled selected>Day</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+      </select>
+      <select name="Year" required>
+        <option disabled selected value="">Year</option>
+        <option>1984</option>
+        <option>1983</option>
+        <option>1982</option>
+      </select>
+      <br />
+      <span>I agree to the terms and conditions</span>
+      <input type="checkbox" name="agree" value="true" required />
+
+      <br /><button>Submit</button>
+    </form>
+  </body>
+</html>

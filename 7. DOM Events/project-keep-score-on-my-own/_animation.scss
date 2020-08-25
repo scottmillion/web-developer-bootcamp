@@ -1,0 +1,11 @@
+/* Javascript Toggle Animation Import */
+
+.pointAnimation {
+  transform: $transformImgPos;
+  transition: ease-out 100ms;
+}
+
+.pointAnimationNeg {
+  transform: $transformImgNeg;
+  transition: ease-out 100ms;
+}
