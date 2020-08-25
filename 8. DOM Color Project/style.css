@@ -1,0 +1,22 @@
+body {
+  background-color: #232323;
+}
+
+h1 {
+  color: white;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.square {
+  width: 30%;
+  padding-bottom: 30%;
+  margin: 1.66%;
+  background: violet;
+}
