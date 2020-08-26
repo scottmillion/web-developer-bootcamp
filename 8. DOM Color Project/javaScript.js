@@ -13,7 +13,10 @@ function randomRgbStr() {
 
 function allSquaresWinningColor(squares, pickedColor) {
   for (let k = 0; k < squares.length; k++) {
-    squares[k].classList.remove("hide");
+    if ((k < 3 && arrSize === 3) || arrSize === 6) {
+      squares[k].classList.remove("hide");
+    }
+
     squares[k].style.backgroundColor = pickedColor;
   }
   document.querySelector(".heading").style.background = pickedColor;
@@ -34,6 +37,9 @@ function resetGame() {
   for (let k = 0; k < squares.length; k++) {
     squares[k].style.backgroundColor = pickedColor;
     squares[k].classList.remove("hide");
+    if (k >= 3 && arrSize === 3) {
+      squares[k].classList.add("hide");
+    }
   }
   colors = randomColorArr(arrSize);
   pickedColor = colors[Math.floor(Math.random() * arrSize)];
@@ -57,14 +63,15 @@ difficultyIsHard.classList.add("game-mode");
 difficultyIsEasy.addEventListener("click", function () {
   this.classList.add("game-mode");
   difficultyIsHard.classList.remove("game-mode");
-  // arrSize = setColorArraySize("easy");
-  // resetGame();
+  arrSize = setColorArraySize("easy");
+  resetGame();
 });
 
 difficultyIsHard.addEventListener("click", function () {
   this.classList.add("game-mode");
   difficultyIsEasy.classList.remove("game-mode");
-  // arrSize = setColorArraySize();
+  arrSize = setColorArraySize("hard");
+  resetGame();
 });
 
 let arrSize = setColorArraySize();
@@ -83,8 +90,10 @@ function activateSquares(squares) {
       if (clickedColor === pickedColor) {
         allSquaresWinningColor(squares, clickedColor);
       } else {
-        this.classList.add("hide");
-        document.getElementById("middle").innerHTML = "Try again!";
+        if (!this.classList.contains("hide")) {
+          document.getElementById("middle").innerHTML = "Try again!";
+          this.classList.add("hide");
+        }
       }
     });
   }
