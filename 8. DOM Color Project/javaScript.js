@@ -1,4 +1,9 @@
+// Returns: Array of random RGB color strings.
 let randomColorArr = (arrSize) => {
+  function randomRgbStr() {
+    let rgbGen = () => Math.floor(Math.random() * 256);
+    return `rgb(${rgbGen()}, ${rgbGen()}, ${rgbGen()})`;
+  }
   let arr = [];
   for (let j = 0; j < arrSize; j++) {
     arr.push(randomRgbStr());
@@ -6,11 +11,7 @@ let randomColorArr = (arrSize) => {
   return arr;
 };
 
-function randomRgbStr() {
-  let rgbGen = () => Math.floor(Math.random() * 256);
-  return `rgb(${rgbGen()}, ${rgbGen()}, ${rgbGen()})`;
-}
-
+// Returns: undefined. Trigger: a win.
 function allSquaresWinningColor(squares, pickedColor) {
   for (let k = 0; k < squares.length; k++) {
     if ((k < 3 && arrSize === 3) || arrSize === 6) {
@@ -31,6 +32,7 @@ function allSquaresWinningColor(squares, pickedColor) {
   return;
 }
 
+// Returns: undefined. Resets game from altered state.
 function resetGame() {
   document.getElementById("middle").innerHTML = "";
   document.querySelector(".heading").style.background = "rgb(36, 134, 199)";
@@ -46,7 +48,7 @@ function resetGame() {
   activateSquares(squares);
 }
 
-let newColors = document.getElementById("new-colors");
+let newColors = document.getElementById("new-colors-text");
 
 newColors.addEventListener("click", function () {
   resetGame();
