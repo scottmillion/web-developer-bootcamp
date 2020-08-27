@@ -1,3 +1,18 @@
 h1 {
-  color: blue;
+}
+
+li {
+  list-style: none;
+}
+
+#container {
+  width: 360px;
+  border: 2px solid gray;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.crossOff {
+  text-decoration: line-through;
+  color: gray;
 }
