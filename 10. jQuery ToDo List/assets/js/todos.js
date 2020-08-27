@@ -1,26 +1,38 @@
-// $("li").on("click", function () {
-//   $(this).toggleClass("crossOff");
-// });
-
 $("ul").on("click", "li", function () {
   $(this).toggleClass("crossOff");
 });
 
 $("ul").on("click", "span", function (e) {
-  e.stopPropagation(); // prevents "li" strikethrough parent event from happening
-  // Great example of "Event Bubbling":
-  // The inner-most event (li span) fires first, then the parent (li), parent of parent (ul), etc.
-  // If you want to stop event bubbling, pass in the event "e" and then e.stopPropagation();
+  e.stopPropagation();
   $(this)
     .parent()
-    .fadeOut(300, "swing", function () {
+    .fadeOut(250, "swing", function () {
       $(this).remove();
     });
 });
 
+$("ul").on("mouseover", "li", function () {
+  $(this).children().addClass("span-show");
+});
+
+$("ul").on("mouseout", "li", function () {
+  $(this).children().removeClass("span-show");
+});
+
 $("input[type='text']").keypress(function (e) {
   if (e.which === 13) {
-    $("ul").append("<li><span>X</span> " + $(this).val() + "</li>");
-    $(this).val(""); // empties input field after pressing enter
+    $("ul").append(
+      "<li><span><i class='fa fa-trash'></i></span> " + $(this).val() + "</li>"
+    );
+    $(this).val("");
   }
+});
+
+$(".fa-plus").on("click", function () {
+  $("ul").append(
+    "<li><span><i class='fa fa-trash'></i></span> " +
+      $('input[type="text"]').val() +
+      "</li>"
+  );
+  $('input[type="text"]').val("");
 });
