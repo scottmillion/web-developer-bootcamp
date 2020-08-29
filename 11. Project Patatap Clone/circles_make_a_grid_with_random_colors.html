@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/circles.css" />
+    <script src="paper-full.js"></script>
+    <script type="text/paperscript" canvas="myCanvas">
+      function randomRGB() {
+        var num1 = Math.floor(Math.random() * 256);
+        var num2 = Math.floor(Math.random() * 256);
+        var num3 = Math.floor(Math.random() * 256);
+
+        return "rgb(" + num1 + ", " + num2 + ", " + num3 + ")"
+      }
+
+      function circleGrid (xStart, yStart, radius, xIncrement, yIncrement, circlesPerRow, numberOfRows, circleFillColor) {
+        var xCurrent = xStart;
+        var yCurrent = yStart;
+        for(var j = 0; j < numberOfRows; j ++) {
+          for(var i = 0; i < circlesPerRow; i ++) {
+            new Path.Circle(new Point(xCurrent, yCurrent), radius).fillColor = circleFillColor();
+            xCurrent += xIncrement;
+          }
+          xCurrent = xStart;
+          yCurrent += yIncrement;
+        }
+      }
+
+      circleGrid(0, 0, 10, 100, 100, 10, 10, randomRGB);
+    </script>
+  </head>
+  <body>
+    <canvas id="myCanvas" resize></canvas>
+    <script src="assets/js/circles.js"></script>
+  </body>
+</html>
