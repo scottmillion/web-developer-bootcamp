@@ -1,0 +1,15 @@
+<%- include("partials/header") %>
+
+<h1>You fell in love with: <%= thingVar %></h1>
+<% if(thingVar.toLowerCase() === "pizza") { %>
+<p>GOOD CHOICE! PIZZA IS THE BEST</p>
+<% } else { %>
+<p>Pizza would have been a better choice.</p>
+<% } %>
+<p>P.S. this is the love.ejs file!</p>
+
+<!-- <%= %> - used when you want the javascript result to be actual html.
+Variables for example.-->
+
+<!-- <% %> - used for conditionals, loops, etc., any logic to be run. -->
+<%- include("partials/footer") %>
