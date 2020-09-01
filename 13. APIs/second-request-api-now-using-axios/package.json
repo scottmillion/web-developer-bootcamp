@@ -1,0 +1,15 @@
+{
+  "name": "second-request-api-now-using-axios",
+  "version": "1.0.0",
+  "description": "",
+  "main": "second-request.js",
+  "dependencies": {
+    "axios": "^0.20.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
